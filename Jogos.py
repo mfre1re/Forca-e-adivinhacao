@@ -10,4 +10,3 @@ if jogo == 1:
     Adivinhação.jogar()
 elif jogo == 2:
     Forca.jogar()
-
