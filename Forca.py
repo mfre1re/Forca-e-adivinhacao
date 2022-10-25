@@ -5,21 +5,24 @@ def jogar():
     print("*********************************")
 
     palavra_secreta = "banana"
-    enforcado = False
-    jogando = False
+    chances = 0
     lista = ["_", "_", "_", "_", "_", "_"]
 
-    while not enforcado and not jogando:
+    while chances != 6:
         chute = input("Qual letra você deseja? ").lower().strip()
         posicao = 0
         for letra in palavra_secreta:
             if chute == letra:
                 lista[posicao] = chute
             posicao += 1
+        if chute not in "banana":
+            print(f"Menos uma chance! Restam apenas {5 - chances}!")
+            chances += 1
         for i in lista:
             print(i, end=" ")
+
         print("\nJogando...")
     print("Fim de jogo!")
 
-if(__name__ == "__main__"):
+if __name__ == "__main__":
     jogar()
