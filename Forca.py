@@ -4,10 +4,10 @@ def jogar():
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
-    palavra_secreta = "banana"
+    palavra_secreta = "flecha"
     chances = 0
     enforcado = False
-    lista = ["_", "_", "_", "_", "_", "_"]
+    lista = ["_" for letra in palavra_secreta]
 
     while enforcado == False:
         chute = input("Qual letra você deseja? ").lower().strip()
@@ -27,7 +27,10 @@ def jogar():
 
         enforcado = "_" not in lista
         print("\nJogando...")
-    print("\nFim de jogo!")
+    if "_" not in lista:
+        print("\nParabéns! Você descobriu a palavra!")
+    else:
+        print("\nVocê foi enforcado! Fim de jogo!")
 
 if __name__ == "__main__":
     jogar()
